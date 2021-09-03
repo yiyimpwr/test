@@ -1,0 +1,5 @@
+#! /bin/sh
+for i in {10..20};do
+echo "number is :"$i
+done
+

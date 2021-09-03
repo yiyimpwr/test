@@ -1,0 +1,13 @@
+#! bin/sh
+if [ $battery_level -lt $warning_level ] && [ $charging -eq 0 ]  then
+        play -q -v 0.40 "$warning_alarm" &
+        notify-send " Low battery: ${battery_level}% " \ " Plug into mains power " -t 8000
+    elif [ $battery_level -lt $danger_level_battery ] && [ $charging -eq 0 ]
+    then
+        play -q -v 0.40 "$warning_alarm" &
+        notify-send "Very Low battery: ${battery_level}% " \ "Please Plug into mains power " -t 8000
+    elif [ $battery_level -lt $full_charge ] && [ $charging -eq 1 ]
+    then 
+        play -q -v 0.40 "$pluged_in_alarm" &
+        notify-send "Battery Fully charged : ${battery_level}% " \ "Please Unplug your power " -t 8000
+    fi

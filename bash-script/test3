@@ -1,0 +1,6 @@
+#! /usr/bin/sh
+FILE=/home/max/Desktop/tamrimsh/bash-script/file
+if test -f "$FILE"; then
+    echo "$FILE exists."
+fi
+
